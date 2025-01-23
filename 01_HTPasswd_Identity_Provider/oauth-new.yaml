@@ -1,0 +1,14 @@
+apiVersion: config.openshift.io/v1
+kind: OAuth
+...output omitted...
+spec:
+  identityProviders:
+  - ldap:
+...output omitted...
+    type: LDAP
+  - htpasswd:
+      fileData:
+        name: ex280-htpass-secret
+    mappingMethod: claim
+    name: local-users
+    type: HTPasswd
